@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact | APEX DOMINION</title>
+
+<meta name="description" content="Contact APEX DOMINION through Facebook, TikTok and Discord. #VICTORY IN OUR BLOOD">
+<meta name="keywords" content="APEX DOMINION, APX, Free Fire Esports, Bangladesh Esports, Contact">
+<meta name="author" content="APEX DOMINION">
+<meta name="robots" content="index, follow">
+
+<meta name="theme-color" content="#c40000">
+
+<link rel="icon" type="image/jpeg" href="IMG_8314.jpeg">
+<link rel="apple-touch-icon" href="IMG_8314.jpeg">
+
+<link rel="canonical" href="https://apexdominion.github.io/contact.html">
+
+<meta property="og:title" content="Contact | APEX DOMINION">
+<meta property="og:description" content="Connect with APEX DOMINION on Facebook, TikTok and Discord.">
+<meta property="og:image" content="https://apexdominion.github.io/IMG_8314.jpeg">
+<meta property="og:url" content="https://apexdominion.github.io/contact.html">
+<meta property="og:type" content="website">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+    color:#111;
+    overflow-x:hidden;
+}
+
+/* LOADER */
+
+#loader{
+    position:fixed;
+    inset:0;
+    background:#050505;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    transition:.5s;
+}
+
+.loader-box{
+    text-align:center;
+}
+
+.loader-logo{
+    width:75px;
+    height:75px;
+    object-fit:contain;
+    margin-bottom:15px;
+}
+
+.loader-line{
+    width:120px;
+    height:3px;
+    background:#222;
+    overflow:hidden;
+    margin:auto;
+}
+
+.loader-line::after{
+    content:"";
+    display:block;
+    width:50%;
+    height:100%;
+    background:#c40000;
+    animation:load 1s infinite;
+}
+
+@keyframes load{
+    0%{transform:translateX(-100%);}
+    100%{transform:translateX(250%);}
+}
+
+/* NAVBAR */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+}
+
+.navbar{
+    height:75px;
+    background:rgba(5,5,5,.97);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 6%;
+    border-bottom:1px solid #222;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:white;
+    text-decoration:none;
+    font-size:20px;
+    font-weight:900;
+    letter-spacing:1px;
+}
+
+.logo img{
+    width:42px;
+    height:42px;
+    object-fit:contain;
+}
+
+.logo span{
+    color:#c40000;
+}
+
+.desktop-menu{
+    display:flex;
+    list-style:none;
+    gap:28px;
+}
+
+.desktop-menu a{
+    color:#fff;
+    text-decoration:none;
+    font-size:13px;
+    font-weight:700;
+    letter-spacing:1px;
+    transition:.3s;
+}
+
+.desktop-menu a:hover{
+    color:#c40000;
+}
+
+/* MOBILE MENU BUTTON */
+
+.menu-btn{
+    display:none;
+    width:42px;
+    height:42px;
+    background:none;
+    border:1px solid #333;
+    cursor:pointer;
+    padding:8px;
+}
+
+.menu-btn span{
+    display:block;
+    width:100%;
+    height:2px;
+    background:white;
+    margin:5px 0;
+}
+
+/* MOBILE MENU */
+
+.mobile-menu{
+    display:none;
+    background:#080808;
+    border-bottom:1px solid #222;
+}
+
+.mobile-menu.open{
+    display:block;
+}
+
+.mobile-menu a{
+    display:block;
+    padding:16px 7%;
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:bold;
+    border-bottom:1px solid #191919;
+}
+
+.mobile-menu a:hover{
+    background:#c40000;
+}
+
+/* HERO */
+
+.hero{
+    min-height:430px;
+    background:
+    linear-gradient(90deg,rgba(0,0,0,.94),rgba(0,0,0,.72)),
+    url("IMG_8314.jpeg") center/cover;
+    display:flex;
+    align-items:center;
+    padding:120px 8% 70px;
+    color:white;
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.hero-label{
+    color:#c40000;
+    font-size:13px;
+    font-weight:bold;
+    letter-spacing:4px;
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-size:clamp(42px,7vw,78px);
+    line-height:.95;
+    font-weight:900;
+    margin-bottom:20px;
+}
+
+.hero p{
+    max-width:650px;
+    color:#ccc;
+    font-size:16px;
+    line-height:1.7;
+}
+
+/* CONTACT */
+
+.contact-section{
+    padding:90px 8%;
+    background:#fff;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:55px;
+}
+
+.section-title span{
+    color:#c40000;
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:4px;
+}
+
+.section-title h2{
+    font-size:40px;
+    margin-top:10px;
+    font-weight:900;
+}
+
+.social-grid{
+    max-width:1050px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.social-card{
+    background:#0b0b0b;
+    color:white;
+    text-decoration:none;
+    padding:38px 30px;
+    min-height:220px;
+    border:1px solid #222;
+    position:relative;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.social-card::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:4px;
+    height:100%;
+    background:#c40000;
+}
+
+.social-card:hover{
+    transform:translateY(-8px);
+    border-color:#c40000;
+}
+
+.social-icon{
+    font-size:36px;
+    margin-bottom:20px;
+}
+
+.social-card h3{
+    font-size:23px;
+    margin-bottom:10px;
+}
+
+.social-card p{
+    color:#aaa;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.visit{
+    display:inline-block;
+    margin-top:20px;
+    color:#c40000;
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:2px;
+}
+
+/* BANNER */
+
+.banner{
+    background:#c40000;
+    color:white;
+    text-align:center;
+    padding:65px 20px;
+}
+
+.banner h2{
+    font-size:clamp(30px,5vw,55px);
+    font-weight:900;
+    margin-bottom:12px;
+}
+
+.banner p{
+    font-size:14px;
+    letter-spacing:3px;
+    font-weight:bold;
+}
+
+/* FOOTER */
+
+footer{
+    background:#050505;
+    color:#888;
+    text-align:center;
+    padding:35px 20px;
+}
+
+.footer-logo{
+    color:white;
+    font-size:20px;
+    font-weight:900;
+    margin-bottom:10px;
+}
+
+.footer-logo span{
+    color:#c40000;
+}
+
+footer p{
+    font-size:12px;
+    line-height:1.7;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:850px){
+
+    .desktop-menu{
+        display:none;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .social-grid{
+        grid-template-columns:1fr;
+        max-width:500px;
+    }
+
+    .hero{
+        min-height:390px;
+        padding:120px 7% 60px;
+    }
+
+    .contact-section{
+        padding:70px 7%;
+    }
+
+}
+
+@media(max-width:500px){
+
+    .navbar{
+        height:68px;
+        padding:0 5%;
+    }
+
+    .logo{
+        font-size:16px;
+    }
+
+    .logo img{
+        width:36px;
+        height:36px;
+    }
+
+    .hero h1{
+        font-size:43px;
+    }
+
+    .hero p{
+        font-size:14px;
+    }
+
+    .section-title h2{
+        font-size:32px;
+    }
+
+    .social-card{
+        min-height:190px;
+        padding:30px 25px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- LOADER -->
+
+<div id="loader">
+    <div class="loader-box">
+        <img src="IMG_8314.jpeg" class="loader-logo" alt="APEX DOMINION">
+        <div class="loader-line"></div>
+    </div>
+</div>
+
+<!-- NAVBAR -->
+
+<header>
+
+<div class="navbar">
+
+<a href="index.html" class="logo">
+<img src="IMG_8314.jpeg" alt="APEX DOMINION Logo">
+APEX <span>DOMINION</span>
+</a>
+
+<ul class="desktop-menu">
+<li><a href="index.html">HOME</a></li>
+<li><a href="players.html">PLAYERS</a></li>
+<li><a href="tournaments.html">TOURNAMENTS</a></li>
+<li><a href="stats.html">STATS</a></li>
+<li><a href="news.html">NEWS</a></li>
+<li><a href="gallery.html">GALLERY</a></li>
+<li><a href="contact.html">CONTACT</a></li>
+</ul>
+
+<button class="menu-btn" id="menuBtn" aria-label="Open menu">
+<span></span>
+<span></span>
+<span></span>
+</button>
+
+</div>
+
+<div class="mobile-menu" id="mobileMenu">
+<a href="index.html">HOME</a>
+<a href="players.html">PLAYERS</a>
+<a href="tournaments.html">TOURNAMENTS</a>
+<a href="stats.html">STATS</a>
+<a href="news.html">NEWS</a>
+<a href="gallery.html">GALLERY</a>
+<a href="contact.html">CONTACT</a>
+</div>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="hero-label">
+CONNECT WITH US
+</div>
+
+<h1>
+CONTACT<br>
+APEX DOMINION
+</h1>
+
+<p>
+Follow APEX DOMINION, join our community and stay connected
+with everything happening around the team.
+</p>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact-section">
+
+<div class="section-title">
+<span>OFFICIAL CHANNELS</span>
+<h2>CONNECT WITH APX</h2>
+</div>
+
+<div class="social-grid">
+
+<a class="social-card"
+href="https://www.facebook.com/share/14qMee4sYWx/?mibextid=wwXIfr"
+target="_blank"
+rel="noopener">
+
+<div class="social-icon">f</div>
+
+<h3>Facebook</h3>
+
+<p>
+Follow APEX DOMINION on Facebook for team updates,
+announcements and esports content.
+</p>
+
+<div class="visit">
+VISIT FACEBOOK →
+</div>
+
+</a>
+
+
+<a class="social-card"
+href="https://www.tiktok.com/@apex_dominion_?_r=1&_t=ZS-99iZqAncLZc"
+target="_blank"
+rel="noopener">
+
+<div class="social-icon">♪</div>
+
+<h3>TikTok</h3>
+
+<p>
+Watch our latest clips, highlights and competitive
+Free Fire content on TikTok.
+</p>
+
+<div class="visit">
+VISIT TIKTOK →
+</div>
+
+</a>
+
+
+<a class="social-card"
+href="https://discord.gg/PWsaScBq"
+target="_blank"
+rel="noopener">
+
+<div class="social-icon">◉</div>
+
+<h3>Discord</h3>
+
+<p>
+Join the official APEX DOMINION Discord community
+and stay connected with the team.
+</p>
+
+<div class="visit">
+JOIN DISCORD →
+</div>
+
+</a>
+
+</div>
+
+</section>
+
+<!-- BANNER -->
+
+<section class="banner">
+
+<h2>#VICTORY IN OUR BLOOD</h2>
+
+<p>ONE TEAM • ONE DOMINION • ONE GOAL</p>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-logo">
+APEX <span>DOMINION</span>
+</div>
+
+<p>
+© 2026 APEX DOMINION. All Rights Reserved.
+</p>
+
+<p>
+#VICTORY IN OUR BLOOD
+</p>
+
+</footer>
+
+<script>
+
+/* MOBILE MENU */
+
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+
+menuBtn.addEventListener("click",function(){
+
+    mobileMenu.classList.toggle("open");
+
+});
+
+document.querySelectorAll(".mobile-menu a").forEach(function(link){
+
+    link.addEventListener("click",function(){
+
+        mobileMenu.classList.remove("open");
+
+    });
+
+});
+
+
+/* LOADER */
+
+window.addEventListener("load",function(){
+
+    setTimeout(function(){
+
+        document.getElementById("loader").style.opacity="0";
+
+        setTimeout(function(){
+
+            document.getElementById("loader").style.display="none";
+
+        },500);
+
+    },500);
+
+});
+
+</script>
+
+</body>
+</html>
