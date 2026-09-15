@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Gallery | APEX DOMINION</title>
+
+<meta name="description" content="Official APEX DOMINION esports team gallery, player photos and team moments.">
+<meta name="keywords" content="APEX DOMINION gallery, APX esports, Free Fire esports Bangladesh">
+<meta name="author" content="APEX DOMINION">
+<meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow">
+<meta name="theme-color" content="#c40000">
+
+<link rel="icon" type="image/jpeg" href="IMG_8314.jpeg">
+<link rel="apple-touch-icon" href="IMG_8314.jpeg">
+
+<link rel="canonical" href="https://apexdominion.github.io/gallery.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Gallery | APEX DOMINION">
+<meta property="og:description" content="Official APEX DOMINION team and player gallery.">
+<meta property="og:image" content="IMG_8314.jpeg">
+<meta property="og:url" content="https://apexdominion.github.io/gallery.html">
+<meta property="og:site_name" content="APEX DOMINION">
+
+
+<style>
+
+/* ================= RESET ================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#fff;
+color:#111;
+overflow-x:hidden;
+}
+
+
+/* ================= NAVBAR ================= */
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:70px;
+background:rgba(255,255,255,.97);
+backdrop-filter:blur(12px);
+border-bottom:1px solid #eee;
+z-index:9999;
+}
+
+.navbar{
+height:70px;
+max-width:1200px;
+margin:auto;
+padding:0 25px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+text-decoration:none;
+color:#111;
+font-size:18px;
+font-weight:900;
+}
+
+.logo img{
+width:43px;
+height:43px;
+object-fit:contain;
+}
+
+.logo span{
+color:#c40000;
+}
+
+
+/* ================= DESKTOP MENU ================= */
+
+.desktop-menu{
+display:flex;
+gap:22px;
+list-style:none;
+}
+
+.desktop-menu a{
+text-decoration:none;
+color:#222;
+font-size:12px;
+font-weight:900;
+letter-spacing:.7px;
+}
+
+.desktop-menu a:hover{
+color:#c40000;
+}
+
+
+/* ================= HAMBURGER ================= */
+
+.menu-btn{
+display:none;
+width:44px;
+height:44px;
+border:1px solid #ddd;
+border-radius:8px;
+background:#fff;
+cursor:pointer;
+padding:8px;
+}
+
+.menu-btn span{
+display:block;
+height:3px;
+width:100%;
+background:#111;
+margin:5px 0;
+border-radius:3px;
+}
+
+
+/* ================= MOBILE MENU ================= */
+
+.mobile-menu{
+display:none;
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:#fff;
+border-bottom:2px solid #eee;
+box-shadow:0 12px 30px rgba(0,0,0,.1);
+}
+
+.mobile-menu.open{
+display:block;
+}
+
+.mobile-menu a{
+display:block;
+padding:17px 25px;
+border-bottom:1px solid #eee;
+text-decoration:none;
+color:#111;
+font-size:14px;
+font-weight:900;
+letter-spacing:1px;
+}
+
+.mobile-menu a:hover{
+color:#c40000;
+background:#fafafa;
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+padding:150px 25px 80px;
+text-align:center;
+
+background:
+radial-gradient(
+circle at center,
+rgba(196,0,0,.08),
+transparent 45%
+);
+}
+
+.hero small{
+color:#c40000;
+font-size:11px;
+font-weight:900;
+letter-spacing:4px;
+}
+
+.hero h1{
+margin-top:14px;
+font-size:clamp(48px,8vw,80px);
+font-weight:1000;
+letter-spacing:-3px;
+}
+
+.hero h1 span{
+color:#c40000;
+}
+
+.hero p{
+max-width:650px;
+margin:20px auto 0;
+color:#666;
+font-size:15px;
+line-height:1.7;
+}
+
+
+/* ================= MAIN ================= */
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:0 25px;
+}
+
+.content{
+padding:20px 0 100px;
+}
+
+
+/* ================= GALLERY GRID ================= */
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+
+/* ================= GALLERY CARD ================= */
+
+.gallery-card{
+position:relative;
+background:#fff;
+border:1px solid #e5e5e5;
+border-radius:10px;
+overflow:hidden;
+transition:.35s;
+}
+
+.gallery-card:hover{
+transform:translateY(-6px);
+border-color:#c40000;
+box-shadow:0 18px 40px rgba(0,0,0,.09);
+}
+
+
+/* IMAGE */
+
+.gallery-image{
+width:100%;
+height:390px;
+background:#f3f3f3;
+overflow:hidden;
+}
+
+.gallery-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
+transition:.45s;
+}
+
+.gallery-card:hover .gallery-image img{
+transform:scale(1.05);
+}
+
+
+/* LOGO CARD */
+
+.gallery-card.logo-card .gallery-image{
+height:390px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#111;
+}
+
+.gallery-card.logo-card .gallery-image img{
+width:70%;
+height:70%;
+object-fit:contain;
+}
+
+
+/* CAPTION */
+
+.gallery-caption{
+padding:20px;
+}
+
+.gallery-caption small{
+font-size:9px;
+font-weight:900;
+letter-spacing:2px;
+color:#c40000;
+}
+
+.gallery-caption h2{
+font-size:18px;
+font-weight:1000;
+margin-top:7px;
+}
+
+.gallery-caption p{
+font-size:12px;
+color:#777;
+margin-top:6px;
+}
+
+
+/* ================= COMING SOON ================= */
+
+.coming{
+margin-top:55px;
+background:#111;
+color:#fff;
+border-radius:10px;
+padding:50px 25px;
+text-align:center;
+}
+
+.coming h2{
+font-size:32px;
+font-weight:1000;
+}
+
+.coming p{
+color:#aaa;
+font-size:13px;
+margin-top:12px;
+}
+
+.coming strong{
+display:block;
+color:#c40000;
+font-size:11px;
+letter-spacing:2px;
+margin-top:20px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+background:#0d0d0d;
+color:#fff;
+text-align:center;
+padding:40px 25px;
+}
+
+footer img{
+width:55px;
+height:55px;
+object-fit:contain;
+margin-bottom:12px;
+}
+
+footer h3{
+font-size:18px;
+}
+
+.footer-slogan{
+color:#c40000;
+font-weight:900;
+letter-spacing:2px;
+margin-top:12px;
+font-size:12px;
+}
+
+footer p{
+color:#999;
+font-size:12px;
+margin-top:12px;
+}
+
+
+/* ================= LOADER ================= */
+
+#loader{
+position:fixed;
+inset:0;
+background:#fff;
+z-index:99999;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+transition:.5s;
+}
+
+#loader.hide{
+opacity:0;
+visibility:hidden;
+}
+
+.loader-box{
+text-align:center;
+}
+
+.loader-box img{
+width:90px;
+height:90px;
+object-fit:contain;
+animation:pulse 1.4s infinite;
+}
+
+.loader-line{
+width:160px;
+height:3px;
+background:#eee;
+margin:20px auto;
+overflow:hidden;
+}
+
+.loader-line span{
+display:block;
+height:100%;
+width:50%;
+background:#c40000;
+animation:load 1.2s infinite;
+}
+
+.loader-box p{
+font-size:11px;
+font-weight:900;
+letter-spacing:4px;
+}
+
+
+@keyframes pulse{
+
+0%,100%{
+transform:scale(.95);
+opacity:.7;
+}
+
+50%{
+transform:scale(1.05);
+opacity:1;
+}
+
+}
+
+@keyframes load{
+
+0%{
+transform:translateX(-160px);
+}
+
+100%{
+transform:translateX(160px);
+}
+
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+.desktop-menu{
+display:none;
+}
+
+.menu-btn{
+display:block;
+}
+
+.gallery-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+
+@media(max-width:600px){
+
+.navbar{
+padding:0 16px;
+}
+
+.logo{
+font-size:15px;
+}
+
+.logo img{
+width:38px;
+height:38px;
+}
+
+.hero{
+padding-top:130px;
+}
+
+.container{
+padding:0 16px;
+}
+
+.gallery-grid{
+grid-template-columns:1fr;
+}
+
+.gallery-image{
+height:430px;
+}
+
+.gallery-card.logo-card .gallery-image{
+height:330px;
+}
+
+}
+
+
+/* ================= REDUCED MOTION ================= */
+
+@media(prefers-reduced-motion:reduce){
+
+*{
+animation:none!important;
+transition:none!important;
+scroll-behavior:auto!important;
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= LOADER ================= -->
+
+<div id="loader">
+
+<div class="loader-box">
+
+<img src="IMG_8314.jpeg"
+alt="APEX DOMINION">
+
+<div class="loader-line">
+<span></span>
+</div>
+
+<p>APX</p>
+
+</div>
+
+</div>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+<div class="navbar">
+
+
+<a href="index.html"
+class="logo">
+
+<img src="IMG_8314.jpeg"
+alt="APEX DOMINION Logo">
+
+APEX <span>DOMINION</span>
+
+</a>
+
+
+<ul class="desktop-menu">
+
+<li><a href="index.html">HOME</a></li>
+
+<li><a href="players.html">PLAYERS</a></li>
+
+<li><a href="tournaments.html">TOURNAMENTS</a></li>
+
+<li><a href="stats.html">STATS</a></li>
+
+<li><a href="news.html">NEWS</a></li>
+
+<li><a href="gallery.html">GALLERY</a></li>
+
+<li><a href="contact.html">CONTACT</a></li>
+
+</ul>
+
+
+<button class="menu-btn"
+id="menuBtn"
+aria-label="Open menu">
+
+<span></span>
+<span></span>
+<span></span>
+
+</button>
+
+</div>
+
+
+<!-- MOBILE MENU -->
+
+<div class="mobile-menu"
+id="mobileMenu">
+
+<a href="index.html">HOME</a>
+
+<a href="players.html">PLAYERS</a>
+
+<a href="tournaments.html">TOURNAMENTS</a>
+
+<a href="stats.html">STATS</a>
+
+<a href="news.html">NEWS</a>
+
+<a href="gallery.html">GALLERY</a>
+
+<a href="contact.html">CONTACT</a>
+
+</div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<small>APEX DOMINION VISUALS</small>
+
+<h1>
+TEAM <span>GALLERY</span>
+</h1>
+
+<p>
+Official APEX DOMINION team identity,
+player portraits and competitive memories.
+</p>
+
+</section>
+
+
+<!-- ================= GALLERY ================= -->
+
+<section class="content">
+
+<div class="container">
+
+
+<div class="gallery-grid">
+
+
+<!-- LOGO -->
+
+<div class="gallery-card logo-card">
+
+<div class="gallery-image">
+
+<img src="IMG_8314.jpeg"
+alt="APEX DOMINION Official Team Logo">
+
+</div>
+
+<div class="gallery-caption">
+
+<small>TEAM IDENTITY</small>
+
+<h2>APEX DOMINION</h2>
+
+<p>Official Team Logo</p>
+
+</div>
+
+</div>
+
+
+<!-- PLAYER 1 -->
+
+<div class="gallery-card">
+
+<div class="gallery-image">
+
+<img src="IMG_3633.jpeg"
+alt="APX.RAHAT">
+
+</div>
+
+<div class="gallery-caption">
+
+<small>PLAYER 01</small>
+
+<h2>APX.RAHAT</h2>
+
+<p>Bomber</p>
+
+</div>
+
+</div>
+
+
+<!-- PLAYER 2 -->
+
+<div class="gallery-card">
+
+<div class="gallery-image">
+
+<img src="IMG_7348.jpeg"
+alt="APX.ABIRx7">
+
+</div>
+
+<div class="gallery-caption">
+
+<small>PLAYER 02</small>
+
+<h2>APX.ABIRx7</h2>
+
+<p>Sniper</p>
+
+</div>
+
+</div>
+
+
+<!-- PLAYER 3 -->
+
+<div class="gallery-card">
+
+<div class="gallery-image">
+
+<img src="IMG_7347.jpeg"
+alt="APX.TANVIR07">
+
+</div>
+
+<div class="gallery-caption">
+
+<small>PLAYER 03</small>
+
+<h2>APX.TANVIR07</h2>
+
+<p>Supporter</p>
+
+</div>
+
+</div>
+
+
+<!-- PLAYER 4 -->
+
+<div class="gallery-card">
+
+<div class="gallery-image">
+
+<img src="IMG_7350.jpeg"
+alt="APX.FUHAD07">
+
+</div>
+
+<div class="gallery-caption">
+
+<small>PLAYER 04</small>
+
+<h2>APX.FUHAD07</h2>
+
+<p>Supporter</p>
+
+</div>
+
+</div>
+
+
+<!-- PLAYER 5 -->
+
+<div class="gallery-card">
+
+<div class="gallery-image">
+
+<img src="IMG_7349.jpeg"
+alt="APX.TORVEXx7">
+
+</div>
+
+<div class="gallery-caption">
+
+<small>PLAYER 05</small>
+
+<h2>APX.TORVEXx7</h2>
+
+<p>Rusher</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<!-- COMING SOON -->
+
+<div class="coming">
+
+<h2>
+MORE MOMENTS COMING SOON.
+</h2>
+
+<p>
+Tournament photos, team moments and new memories
+will be added as APEX DOMINION continues its journey.
+</p>
+
+<strong>
+#VICTORY IN OUR BLOOD
+</strong>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<img src="IMG_8314.jpeg"
+alt="APEX DOMINION Logo">
+
+<h3>APEX DOMINION</h3>
+
+<div class="footer-slogan">
+#VICTORY IN OUR BLOOD
+</div>
+
+<p>
+© 2026 APEX DOMINION. All Rights Reserved.
+</p>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+const menuBtn =
+document.getElementById("menuBtn");
+
+const mobileMenu =
+document.getElementById("mobileMenu");
+
+
+menuBtn.addEventListener("click",function(){
+
+mobileMenu.classList.toggle("open");
+
+});
+
+
+document
+.querySelectorAll(".mobile-menu a")
+.forEach(function(link){
+
+link.addEventListener("click",function(){
+
+mobileMenu.classList.remove("open");
+
+});
+
+});
+
+
+window.addEventListener("load",function(){
+
+setTimeout(function(){
+
+document
+.getElementById("loader")
+.classList.add("hide");
+
+},400);
+
+});
+
+</script>
+
+
+</body>
+</html>
