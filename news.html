@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>News | APEX DOMINION</title>
+  <meta name="description" content="Latest news and announcements from APEX DOMINION esports team.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: #111111;
+      overflow-x: hidden;
+    }
+
+    /* ================= NAVBAR ================= */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 72px;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #eeeeee;
+      z-index: 1000;
+    }
+
+    nav {
+      max-width: 1200px;
+      height: 100%;
+      margin: auto;
+      padding: 0 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-box img {
+      width: 45px;
+      height: 45px;
+      object-fit: contain;
+    }
+
+    .logo-text {
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      color: #111111;
+    }
+
+    .logo-text span {
+      color: #c40000;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #222222;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover,
+    .nav-links .active {
+      color: #c40000;
+    }
+
+    /* ================= HERO ================= */
+
+    .page-hero {
+      padding: 150px 25px 80px;
+      text-align: center;
+      background:
+        radial-gradient(circle at 50% 20%, rgba(196,0,0,0.08), transparent 35%),
+        #ffffff;
+    }
+
+    .page-hero small {
+      color: #c40000;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 4px;
+    }
+
+    .page-hero h1 {
+      margin-top: 12px;
+      font-size: clamp(45px, 7vw, 75px);
+      font-weight: 1000;
+      letter-spacing: -3px;
+    }
+
+    .page-hero h1 span {
+      color: #c40000;
+    }
+
+    .page-hero p {
+      margin: 18px auto 0;
+      max-width: 620px;
+      color: #666666;
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    /* ================= NEWS ================= */
+
+    .news-section {
+      padding: 20px 25px 100px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .news-card {
+      background: #ffffff;
+      border: 1px solid #e5e5e5;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      transition: 0.3s;
+    }
+
+    .news-card:hover {
+      transform: translateY(-6px);
+      border-color: #c40000;
+      box-shadow: 0 18px 40px rgba(196,0,0,0.10);
+    }
+
+    .news-top {
+      height: 7px;
+      background: #c40000;
+    }
+
+    .news-content {
+      padding: 28px;
+    }
+
+    .news-tag {
+      display: inline-block;
+      background: #111111;
+      color: white;
+      padding: 6px 10px;
+      border-radius: 3px;
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      margin-bottom: 15px;
+    }
+
+    .news-date {
+      color: #999999;
+      font-size: 11px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .news-card h2 {
+      font-size: 24px;
+      font-weight: 1000;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .news-card p {
+      color: #666666;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    /* ================= FEATURED NEWS ================= */
+
+    .featured-news {
+      background: #111111;
+      color: white;
+      border-radius: 10px;
+      padding: 40px;
+      margin-bottom: 45px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .featured-news::after {
+      content: "APX";
+      position: absolute;
+      right: 20px;
+      bottom: -45px;
+      font-size: 170px;
+      font-weight: 1000;
+      color: rgba(255,255,255,0.035);
+    }
+
+    .featured-news .news-tag {
+      background: #c40000;
+    }
+
+    .featured-news .news-date {
+      color: #999999;
+    }
+
+    .featured-news h2 {
+      font-size: 36px;
+      max-width: 750px;
+      margin-bottom: 15px;
+      line-height: 1.15;
+    }
+
+    .featured-news p {
+      color: #bbbbbb;
+      max-width: 700px;
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    /* ================= EMPTY / FUTURE ================= */
+
+    .future-box {
+      margin-top: 50px;
+      padding: 35px;
+      background: #f7f7f7;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .future-box h2 {
+      font-size: 25px;
+      font-weight: 1000;
+      margin-bottom: 10px;
+    }
+
+    .future-box p {
+      color: #666666;
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .future-box span {
+      display: block;
+      margin-top: 15px;
+      color: #c40000;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      background: #0d0d0d;
+      color: white;
+      padding: 35px 25px;
+      text-align: center;
+    }
+
+    footer img {
+      width: 55px;
+      height: 55px;
+      object-fit: contain;
+      margin-bottom: 12px;
+    }
+
+    footer h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    footer p {
+      color: #999999;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    footer .footer-slogan {
+      color: #c40000;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 850px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-news {
+        padding: 32px 25px;
+      }
+
+      .featured-news h2 {
+        font-size: 29px;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .page-hero {
+        padding-top: 125px;
+      }
+
+      .page-hero h1 {
+        font-size: 48px;
+      }
+
+      .news-content {
+        padding: 23px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+
+  <header>
+    <nav>
+
+      <a href="index.html" class="logo-box">
+
+        <img src="IMG_8314.jpeg" alt="APEX DOMINION Logo">
+
+        <div class="logo-text">
+          APEX <span>DOMINION</span>
+        </div>
+
+      </a>
+
+      <ul class="nav-links">
+
+        <li>
+          <a href="index.html">HOME</a>
+        </li>
+
+        <li>
+          <a href="players.html">PLAYERS</a>
+        </li>
+
+        <li>
+          <a href="tournaments.html">TOURNAMENTS</a>
+        </li>
+
+        <li>
+          <a href="stats.html">STATS</a>
+        </li>
+
+        <li>
+          <a href="news.html" class="active">NEWS</a>
+        </li>
+
+        <li>
+          <a href="gallery.html">GALLERY</a>
+        </li>
+
+      </ul>
+
+    </nav>
+  </header>
+
+
+  <!-- ================= HERO ================= -->
+
+  <section class="page-hero">
+
+    <small>APEX DOMINION UPDATES</small>
+
+    <h1>
+      TEAM <span>NEWS</span>
+    </h1>
+
+    <p>
+      Official announcements, tournament updates and
+      the latest news from APEX DOMINION.
+    </p>
+
+  </section>
+
+
+  <!-- ================= NEWS ================= -->
+
+  <section class="news-section">
+
+    <div class="container">
+
+
+      <!-- FEATURED -->
+
+      <div class="featured-news">
+
+        <div class="news-tag">
+          TEAM UPDATE
+        </div>
+
+        <div class="news-date">
+          2026 • APEX DOMINION
+        </div>
+
+        <h2>
+          APEX DOMINION IS READY FOR THE NEXT CHAPTER.
+        </h2>
+
+        <p>
+          A new competitive journey begins. Our roster is preparing
+          for upcoming Free Fire tournaments, scrims and competitive
+          battles. Follow the official APEX DOMINION website for
+          future announcements and results.
+        </p>
+
+      </div>
+
+
+      <!-- NEWS GRID -->
+
+      <div class="news-grid">
+
+
+        <!-- NEWS 1 -->
+
+        <article class="news-card">
+
+          <div class="news-top"></div>
+
+          <div class="news-content">
+
+            <div class="news-tag">
+              ROSTER
+            </div>
+
+            <div class="news-date">
+              2026
+            </div>
+
+            <h2>
+              APEX DOMINION ROSTER ANNOUNCED
+            </h2>
+
+            <p>
+              The official APEX DOMINION roster features five
+              competitive players ready to represent the team
+              on the battlefield.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <!-- NEWS 2 -->
+
+        <article class="news-card">
+
+          <div class="news-top"></div>
+
+          <div class="news-content">
+
+            <div class="news-tag">
+              TOURNAMENT
+            </div>
+
+            <div class="news-date">
+              2026
+            </div>
+
+            <h2>
+              READY FOR COMPETITIVE BATTLES
+            </h2>
+
+            <p>
+              APEX DOMINION continues its preparation for
+              tournaments and high-level competitive matches.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <!-- NEWS 3 -->
+
+        <article class="news-card">
+
+          <div class="news-top"></div>
+
+          <div class="news-content">
+
+            <div class="news-tag">
+              TEAM
+            </div>
+
+            <div class="news-date">
+              2026
+            </div>
+
+            <h2>
+              ONE TEAM. ONE DOMINION.
+            </h2>
+
+            <p>
+              Discipline, teamwork and consistency remain at the
+              heart of the APEX DOMINION competitive identity.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <!-- NEWS 4 -->
+
+        <article class="news-card">
+
+          <div class="news-top"></div>
+
+          <div class="news-content">
+
+            <div class="news-tag">
+              COMING SOON
+            </div>
+
+            <div class="news-date">
+              FUTURE UPDATE
+            </div>
+
+            <h2>
+              MORE ANNOUNCEMENTS ARE COMING
+            </h2>
+
+            <p>
+              Tournament results, player achievements and new
+              team updates will be published here.
+            </p>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+
+      <!-- FUTURE -->
+
+      <div class="future-box">
+
+        <h2>
+          MORE NEWS COMING SOON
+        </h2>
+
+        <p>
+          This page will be updated with official APEX DOMINION
+          tournament results, achievements and announcements.
+        </p>
+
+        <span>
+          #VICTORY IN OUR BLOOD
+        </span>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    <img src="IMG_8314.jpeg" alt="APEX DOMINION Logo">
+
+    <h3>APEX DOMINION</h3>
+
+    <p>
+      Professional Esports Team
+    </p>
+
+    <div class="footer-slogan">
+      #VICTORY IN OUR BLOOD
+    </div>
+
+    <p style="margin-top:15px;">
+      © 2026 APEX DOMINION. All Rights Reserved.
+    </p>
+
+  </footer>
+
+</body>
+</html>
