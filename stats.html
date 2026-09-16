@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Stats | APEX DOMINION</title>
+
+<meta name="description" content="APEX DOMINION team statistics, player stats, leaderboard and competitive performance.">
+<meta name="keywords" content="APEX DOMINION stats, APX player statistics, Free Fire esports stats Bangladesh">
+<meta name="author" content="APEX DOMINION">
+<meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow">
+<meta name="theme-color" content="#c40000">
+
+<link rel="icon" type="image/jpeg" href="IMG_8314.jpeg">
+<link rel="apple-touch-icon" href="IMG_8314.jpeg">
+
+<link rel="canonical" href="https://apexdominion.github.io/stats.html">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Stats | APEX DOMINION">
+<meta property="og:description" content="APEX DOMINION player and team statistics.">
+<meta property="og:image" content="IMG_8314.jpeg">
+<meta property="og:url" content="https://apexdominion.github.io/stats.html">
+<meta property="og:site_name" content="APEX DOMINION">
+
+<style>
+
+/* ================= RESET ================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#fff;
+color:#111;
+overflow-x:hidden;
+}
+
+
+/* ================= NAVBAR ================= */
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:70px;
+background:rgba(255,255,255,.97);
+backdrop-filter:blur(12px);
+border-bottom:1px solid #eee;
+z-index:9999;
+}
+
+.navbar{
+height:70px;
+max-width:1200px;
+margin:auto;
+padding:0 25px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+text-decoration:none;
+color:#111;
+font-size:18px;
+font-weight:900;
+}
+
+.logo img{
+width:43px;
+height:43px;
+object-fit:contain;
+}
+
+.logo span{
+color:#c40000;
+}
+
+
+/* DESKTOP MENU */
+
+.desktop-menu{
+display:flex;
+gap:22px;
+list-style:none;
+}
+
+.desktop-menu a{
+text-decoration:none;
+color:#222;
+font-size:12px;
+font-weight:900;
+letter-spacing:.7px;
+}
+
+.desktop-menu a:hover{
+color:#c40000;
+}
+
+
+/* HAMBURGER */
+
+.menu-btn{
+display:none;
+width:44px;
+height:44px;
+border:1px solid #ddd;
+border-radius:8px;
+background:#fff;
+cursor:pointer;
+padding:8px;
+}
+
+.menu-btn span{
+display:block;
+height:3px;
+width:100%;
+background:#111;
+margin:5px 0;
+border-radius:3px;
+}
+
+
+/* MOBILE MENU */
+
+.mobile-menu{
+display:none;
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:#fff;
+border-bottom:2px solid #eee;
+box-shadow:0 12px 30px rgba(0,0,0,.1);
+}
+
+.mobile-menu.open{
+display:block;
+}
+
+.mobile-menu a{
+display:block;
+padding:17px 25px;
+border-bottom:1px solid #eee;
+text-decoration:none;
+color:#111;
+font-size:14px;
+font-weight:900;
+letter-spacing:1px;
+}
+
+.mobile-menu a:hover{
+color:#c40000;
+background:#fafafa;
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+padding:150px 25px 75px;
+text-align:center;
+
+background:
+radial-gradient(
+circle at center,
+rgba(196,0,0,.08),
+transparent 45%
+);
+}
+
+.hero small{
+color:#c40000;
+font-size:11px;
+font-weight:900;
+letter-spacing:4px;
+}
+
+.hero h1{
+margin-top:14px;
+font-size:clamp(48px,8vw,80px);
+font-weight:1000;
+letter-spacing:-3px;
+}
+
+.hero h1 span{
+color:#c40000;
+}
+
+.hero p{
+max-width:650px;
+margin:20px auto 0;
+color:#666;
+font-size:15px;
+line-height:1.7;
+}
+
+
+/* ================= MAIN ================= */
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:0 25px;
+}
+
+.content{
+padding:20px 0 100px;
+}
+
+
+/* ================= OVERVIEW ================= */
+
+.overview-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:16px;
+margin-bottom:60px;
+}
+
+.overview-card{
+background:#111;
+color:#fff;
+padding:30px 20px;
+border-radius:10px;
+text-align:center;
+transition:.3s;
+}
+
+.overview-card:hover{
+transform:translateY(-5px);
+}
+
+.overview-number{
+font-size:38px;
+font-weight:1000;
+}
+
+.overview-label{
+margin-top:8px;
+font-size:10px;
+font-weight:900;
+letter-spacing:2px;
+color:#aaa;
+}
+
+.overview-card.accent{
+background:#c40000;
+}
+
+
+/* ================= SECTION TITLE ================= */
+
+.section-title{
+margin-bottom:25px;
+}
+
+.section-title small{
+color:#c40000;
+font-size:10px;
+font-weight:900;
+letter-spacing:3px;
+}
+
+.section-title h2{
+font-size:30px;
+margin-top:8px;
+font-weight:1000;
+}
+
+
+/* ================= PLAYER STATS ================= */
+
+.stats-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px;
+margin-bottom:60px;
+}
+
+.stat-card{
+border:1px solid #e5e5e5;
+border-radius:10px;
+padding:25px;
+background:#fff;
+transition:.3s;
+}
+
+.stat-card:hover{
+border-color:#c40000;
+transform:translateY(-4px);
+box-shadow:0 15px 35px rgba(0,0,0,.07);
+}
+
+.stat-top{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:15px;
+}
+
+.player-name{
+font-size:19px;
+font-weight:1000;
+}
+
+.player-ign{
+margin-top:5px;
+font-size:12px;
+color:#c40000;
+font-weight:900;
+}
+
+.role{
+font-size:9px;
+font-weight:900;
+letter-spacing:1px;
+padding:7px 9px;
+background:#111;
+color:#fff;
+border-radius:3px;
+}
+
+.stat-values{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px;
+margin-top:25px;
+}
+
+.stat-box{
+background:#f6f6f6;
+padding:15px 8px;
+text-align:center;
+border-radius:5px;
+}
+
+.stat-box strong{
+display:block;
+font-size:20px;
+font-weight:1000;
+}
+
+.stat-box span{
+display:block;
+margin-top:5px;
+font-size:8px;
+font-weight:900;
+letter-spacing:1px;
+color:#777;
+}
+
+
+/* ================= LEADERBOARD ================= */
+
+.table-wrap{
+overflow-x:auto;
+border:1px solid #e5e5e5;
+border-radius:10px;
+margin-bottom:60px;
+}
+
+.leaderboard{
+width:100%;
+border-collapse:collapse;
+min-width:650px;
+}
+
+.leaderboard th{
+background:#111;
+color:#fff;
+padding:16px;
+text-align:left;
+font-size:10px;
+letter-spacing:1px;
+}
+
+.leaderboard td{
+padding:17px 16px;
+border-bottom:1px solid #eee;
+font-size:13px;
+font-weight:700;
+}
+
+.leaderboard tr:last-child td{
+border-bottom:none;
+}
+
+.rank{
+color:#c40000;
+font-weight:1000;
+}
+
+.tba{
+color:#999;
+}
+
+
+/* ================= PERFORMANCE ================= */
+
+.performance{
+background:#111;
+color:#fff;
+border-radius:10px;
+padding:40px;
+}
+
+.performance h2{
+font-size:28px;
+font-weight:1000;
+}
+
+.performance p{
+color:#aaa;
+font-size:13px;
+line-height:1.7;
+margin-top:10px;
+max-width:650px;
+}
+
+.performance-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
+margin-top:30px;
+}
+
+.performance-box{
+background:#1c1c1c;
+border:1px solid #292929;
+border-radius:7px;
+padding:25px;
+text-align:center;
+}
+
+.performance-box strong{
+display:block;
+font-size:34px;
+font-weight:1000;
+}
+
+.performance-box span{
+display:block;
+margin-top:7px;
+font-size:9px;
+letter-spacing:2px;
+color:#aaa;
+font-weight:900;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+background:#0d0d0d;
+color:#fff;
+text-align:center;
+padding:40px 25px;
+}
+
+footer img{
+width:55px;
+height:55px;
+object-fit:contain;
+margin-bottom:12px;
+}
+
+footer h3{
+font-size:18px;
+}
+
+.footer-slogan{
+color:#c40000;
+font-weight:900;
+letter-spacing:2px;
+margin-top:12px;
+font-size:12px;
+}
+
+footer p{
+color:#999;
+font-size:12px;
+margin-top:12px;
+}
+
+
+/* ================= LOADER ================= */
+
+#loader{
+position:fixed;
+inset:0;
+background:#fff;
+z-index:99999;
+display:flex;
+align-items:center;
+justify-content:center;
+transition:.5s;
+}
+
+#loader.hide{
+opacity:0;
+visibility:hidden;
+}
+
+.loader-box{
+text-align:center;
+}
+
+.loader-box img{
+width:90px;
+height:90px;
+object-fit:contain;
+animation:pulse 1.4s infinite;
+}
+
+.loader-line{
+width:160px;
+height:3px;
+background:#eee;
+margin:20px auto;
+overflow:hidden;
+}
+
+.loader-line span{
+display:block;
+height:100%;
+width:50%;
+background:#c40000;
+animation:load 1.2s infinite;
+}
+
+.loader-box p{
+font-size:11px;
+font-weight:900;
+letter-spacing:4px;
+}
+
+@keyframes pulse{
+
+0%,100%{
+transform:scale(.95);
+opacity:.7;
+}
+
+50%{
+transform:scale(1.05);
+opacity:1;
+}
+
+}
+
+@keyframes load{
+
+0%{
+transform:translateX(-160px);
+}
+
+100%{
+transform:translateX(160px);
+}
+
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+.desktop-menu{
+display:none;
+}
+
+.menu-btn{
+display:block;
+}
+
+.overview-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.stats-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:600px){
+
+.navbar{
+padding:0 16px;
+}
+
+.logo{
+font-size:15px;
+}
+
+.logo img{
+width:38px;
+height:38px;
+}
+
+.hero{
+padding-top:130px;
+}
+
+.container{
+padding:0 16px;
+}
+
+.overview-number{
+font-size:30px;
+}
+
+.performance{
+padding:30px 20px;
+}
+
+.performance-grid{
+grid-template-columns:1fr;
+}
+
+.stat-values{
+gap:7px;
+}
+
+.stat-box{
+padding:13px 5px;
+}
+
+}
+
+
+/* REDUCED MOTION */
+
+@media(prefers-reduced-motion:reduce){
+
+*{
+animation:none!important;
+transition:none!important;
+scroll-behavior:auto!important;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- ================= LOADER ================= -->
+
+<div id="loader">
+
+<div class="loader-box">
+
+<img src="IMG_8314.jpeg" alt="APEX DOMINION">
+
+<div class="loader-line">
+<span></span>
+</div>
+
+<p>APX</p>
+
+</div>
+
+</div>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+<div class="navbar">
+
+<a href="index.html" class="logo">
+
+<img src="IMG_8314.jpeg" alt="APEX DOMINION Logo">
+
+APEX <span>DOMINION</span>
+
+</a>
+
+
+<ul class="desktop-menu">
+
+<li><a href="index.html">HOME</a></li>
+<li><a href="players.html">PLAYERS</a></li>
+<li><a href="tournaments.html">TOURNAMENTS</a></li>
+<li><a href="stats.html">STATS</a></li>
+<li><a href="news.html">NEWS</a></li>
+<li><a href="gallery.html">GALLERY</a></li>
+<li><a href="contact.html">CONTACT</a></li>
+
+</ul>
+
+
+<button class="menu-btn" id="menuBtn" aria-label="Open menu">
+
+<span></span>
+<span></span>
+<span></span>
+
+</button>
+
+</div>
+
+
+<!-- MOBILE MENU -->
+
+<div class="mobile-menu" id="mobileMenu">
+
+<a href="index.html">HOME</a>
+<a href="players.html">PLAYERS</a>
+<a href="tournaments.html">TOURNAMENTS</a>
+<a href="stats.html">STATS</a>
+<a href="news.html">NEWS</a>
+<a href="gallery.html">GALLERY</a>
+<a href="contact.html">CONTACT</a>
+
+</div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<small>APEX DOMINION PERFORMANCE</small>
+
+<h1>
+TEAM <span>STATS</span>
+</h1>
+
+<p>
+Track the APEX DOMINION roster,
+competitive statistics and performance.
+</p>
+
+</section>
+
+
+<!-- ================= CONTENT ================= -->
+
+<section class="content">
+
+<div class="container">
+
+
+<!-- TEAM OVERVIEW -->
+
+<div class="overview-grid">
+
+<div class="overview-card">
+
+<div class="overview-number">
+04
+</div>
+
+<div class="overview-label">
+PLAYERS
+</div>
+
+</div>
+
+
+<div class="overview-card">
+
+<div class="overview-number">
+01
+</div>
+
+<div class="overview-label">
+ACTIVE ROSTER
+</div>
+
+</div>
+
+
+<div class="overview-card accent">
+
+<div class="overview-number">
+∞
+</div>
+
+<div class="overview-label">
+AMBITION
+</div>
+
+</div>
+
+
+<div class="overview-card">
+
+<div class="overview-number">
+APX
+</div>
+
+<div class="overview-label">
+IDENTITY
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PLAYER STATS -->
+
+<div class="section-title">
+
+<small>ROSTER PERFORMANCE</small>
+
+<h2>PLAYER STATS</h2>
+
+</div>
+
+
+<div class="stats-grid">
+
+
+<!-- 01 -->
+
+<div class="stat-card">
+
+<div class="stat-top">
+
+<div>
+
+<div class="player-name">
+ASHRAFUL ISLAM
+</div>
+
+<div class="player-ign">
+APX.RAHAT
+</div>
+
+</div>
+
+<div class="role">
+ALL ROUNDER
+</div>
+
+</div>
+
+
+<div class="stat-values">
+
+<div class="stat-box">
+
+<strong>—</strong>
+<span>KILLS</span>
+
+</div>
+
+<div class="stat-box">
+
+<strong>—</strong>
+<span>MATCHES</span>
+
+</div>
+
+<div class="stat-box">
+
+<strong>—</strong>
+<span>WINS</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- 02 -->
+
+<div class="stat-card">
+
+<div class="stat-top">
+
+<div>
+
+<div class="player-name">
+SAJJAD HOSSEN
+</div>
+
+<div class="player-ign">
+APX.ABIRx7
+</div>
+
+</div>
+
+<div class="role">
+SNIPER
+</div>
+
+</div>
+
+
+<div class="stat-values">
+
+<div class="stat-box">
+
+<strong>—</strong>
+<span>KILLS</span>
+
+</div>
+
+<div class="stat-box">
+
+<strong>—</strong>
+<span>MATCHES</span>
+
+</div>
+
+<div class="stat-box">
+
+<strong>—</strong>
+<span>WINS</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- 03 -->
+
+<div class="stat-card">
+
+<div class="stat-top">
+
+<div>
+
+<div class="player-name">
+TANVIRUL ISLAM
+</div>
+
+<div class="player-ign">
+APX.TANVIR07
+</div>
+
+</div>
+
+<div class="role">
+RUSHER
+</div>
+
+</div>
+
+
+<div class="stat-values">
+
+<div class="stat-box">
+
+<strong>—</strong>
+<span>KILLS</span>
+
+</div>
+
+<div class="stat-box">
+
+<strong>—</strong>
+<span>MATCHES</span>
+
+</div>
+
+<div class="stat-box">
+
+<strong>—</strong>
+<span>WINS</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- 04 -->
+
+<div class="stat-card">
+
+<div class="stat-top">
+
+<div>
+
+<div class="player-name">
+ABDUL KAIYUM
+</div>
+
+<div class="player-ign">
+APX.FUHAD15
+</div>
+
+</div>
+
+<div class="role">
+SUPPORTER
+</div>
+
+</div>
+
+
+<div class="stat-values">
+
+<div class="stat-box">
+
+<strong>—</strong>
+<span>KILLS</span>
+
+</div>
+
+<div class="stat-box">
+
+<strong>—</strong>
+<span>MATCHES</span>
+
+</div>
+
+<div class="stat-box">
+
+<strong>—</strong>
+<span>WINS</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<!-- LEADERBOARD -->
+
+<div class="section-title">
+
+<small>TEAM RANKING</small>
+
+<h2>LEADERBOARD</h2>
+
+</div>
+
+
+<div class="table-wrap">
+
+<table class="leaderboard">
+
+<thead>
+
+<tr>
+
+<th>RANK</th>
+<th>PLAYER</th>
+<th>ROLE</th>
+<th>KILLS</th>
+<th>WINS</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td class="rank">01</td>
+<td>APX.RAHAT</td>
+<td>ALL ROUNDER</td>
+<td class="tba">—</td>
+<td class="tba">—</td>
+
+</tr>
+
+<tr>
+
+<td class="rank">02</td>
+<td>APX.ABIRx7</td>
+<td>SNIPER</td>
+<td class="tba">—</td>
+<td class="tba">—</td>
+
+</tr>
+
+<tr>
+
+<td class="rank">03</td>
+<td>APX.TANVIR07</td>
+<td>RUSHER</td>
+<td class="tba">—</td>
+<td class="tba">—</td>
+
+</tr>
+
+<tr>
+
+<td class="rank">04</td>
+<td>APX.FUHAD15</td>
+<td>SUPPORTER</td>
+<td class="tba">—</td>
+<td class="tba">—</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+
+<!-- COMPETITIVE PERFORMANCE -->
+
+<div class="performance">
+
+<h2>COMPETITIVE PERFORMANCE</h2>
+
+<p>
+Official competitive statistics will be updated as
+APEX DOMINION competes in tournaments and matches.
+</p>
+
+
+<div class="performance-grid">
+
+<div class="performance-box">
+
+<strong>—</strong>
+
+<span>TOTAL KILLS</span>
+
+</div>
+
+
+<div class="performance-box">
+
+<strong>—</strong>
+
+<span>TOTAL MATCHES</span>
+
+</div>
+
+
+<div class="performance-box">
+
+<strong>—</strong>
+
+<span>TOTAL WINS</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<img src="IMG_8314.jpeg" alt="APEX DOMINION Logo">
+
+<h3>APEX DOMINION</h3>
+
+<div class="footer-slogan">
+#VICTORY IN OUR BLOOD
+</div>
+
+<p>
+© 2026 APEX DOMINION. All Rights Reserved.
+</p>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+const menuBtn =
+document.getElementById("menuBtn");
+
+const mobileMenu =
+document.getElementById("mobileMenu");
+
+
+menuBtn.addEventListener("click",function(){
+
+mobileMenu.classList.toggle("open");
+
+});
+
+
+document
+.querySelectorAll(".mobile-menu a")
+.forEach(function(link){
+
+link.addEventListener("click",function(){
+
+mobileMenu.classList.remove("open");
+
+});
+
+});
+
+
+window.addEventListener("load",function(){
+
+setTimeout(function(){
+
+document
+.getElementById("loader")
+.classList.add("hide");
+
+},400);
+
+});
+
+</script>
+
+</body>
+</html>
